@@ -13,14 +13,6 @@ migrate = Migrate(app, db)
 
 db.init_app(app)
 
-@app.route('/messages')
-def messages():
-    return ''
-
-@app.route('/messages/<int:id>')
-def messages_by_id(id):
-    return ''
-
 @app.route("/messages", methods=["GET"])
 def get_messages():
     messages = Message.query.order_by(Message.created_at.asc()).all()
